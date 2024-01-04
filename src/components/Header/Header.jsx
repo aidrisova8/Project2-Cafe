@@ -7,6 +7,8 @@ const Header = () => {
         <div>
             <span className={styles.logo}>Harmony Café and Spa</span>
         </div>
+        <div>Menu</div>
+        <div>Cart</div>
         <div className={styles.banner}> </div>
      </header>
      </>

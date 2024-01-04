@@ -1,8 +1,10 @@
  
-
-const Home = () => {
+import Menu from "../Menu/Menu"
+const Home = ({meals,categories}) => {
   return (
-    <div>Home</div>
+    <div>Home
+<Menu  categories={categories} meals={meals} />
+    </div>
   )
 }
 
