@@ -3,5 +3,5 @@ import cafeReducer from "./cafeSlice"
 
 
 export const store=configureStore({
-    reducer:{meals:cafeReducer},
+    reducer:{orders:cafeReducer},
 })

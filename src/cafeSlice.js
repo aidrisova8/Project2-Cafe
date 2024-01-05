@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState={
-    meals:[]
+    orders:[]
 }
 
 const cafeSlice=createSlice({
-    name: "meals",
+    name: "orders",
     initialState,
     reducers:{
 
