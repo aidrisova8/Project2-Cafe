@@ -4,8 +4,8 @@ const Order = ({item}) => {
     console.log(item)
   return (
     <div className={styles.item}>
-
-<h5>{item.strMeal}</h5> 
+<img src={item.strMealThumb} />
+<h2>{item.strMeal}</h2> 
  <b>Price {item.price}$</b>
      </div>
   )

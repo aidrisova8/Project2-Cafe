@@ -25,8 +25,7 @@ const[mealDescription, setMealDescription]=useState([])
     useEffect(()=>{
         getSingleMeal()
     },[])
-  // const {strMeal}=mealDescription?.[0];
-//const orderItem={idMeal,strMeal,price};
+ 
   return (
     <div className={styles.descriptionWrapper}>
  <h1>{mealDescription[0]?.strMeal}</h1>
@@ -35,7 +34,7 @@ const[mealDescription, setMealDescription]=useState([])
  <p>{mealDescription[0]?.strInstructions}</p>
 <b>Price {price}$</b>
  <div className={styles.addToCart}>
-              <button onClick={()=>dispatch(addOrder({strMeal:mealDescription[0]?.strMeal,price,idMeal}))}>ADD</button>
+              <button onClick={()=>dispatch(addOrder({strMeal:mealDescription[0]?.strMeal,price,idMeal,strMealThumb:mealDescription[0]?.strMealThumb}))}>ADD</button>
             </div>
          
   </div>

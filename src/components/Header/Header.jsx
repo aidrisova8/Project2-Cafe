@@ -5,10 +5,9 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import Order from "../Order/Order";
 const Header = () => {
+   const order  = useSelector((state) => state.orders.orders)
+   console.log(order)
    let[cartOpen, setCartOpen]=useState(false);
-
-   const orders = useSelector((state) => state.orders)
-   console.log(orders)
   return (
      <>
      <header className={styles.header}>
@@ -21,11 +20,12 @@ const Header = () => {
         <FaShoppingBag onClick={()=>setCartOpen(cartOpen=!cartOpen)} className={`${styles.cartButton} ${cartOpen ? styles.active : ''}`} />
 {cartOpen && (
    <div className={styles.cart}>
-{orders.map(item => (
+      {order.length>0 ? showOrders()} 
+{/* {order.map(item => (
     
    <Order key={item.idMeal} item={item} />
   
-))}
+))} */}
    </div>
 )}
 

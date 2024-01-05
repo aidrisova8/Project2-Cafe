@@ -1,0 +1,21 @@
+ .item{
+    width: 100%; 
+    float: left;  
+    margin-bottom: 20px;
+  
+   }
+.item img{
+       width:80px; 
+       height: 80px;
+       float: left;  
+       margin-right: 20px;
+      }
+      h2{
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+b{
+   color: #797979;
+   font-weight: 600; 
+}      
