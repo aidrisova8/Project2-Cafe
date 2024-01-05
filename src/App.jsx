@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react'
 
 function App() {
   const[categories, setCategories]=useState([]);
-  const[order,setOrder]=useState([]);
+  
 
 
   async function getAttribute(){
@@ -31,16 +31,13 @@ function App() {
     
   },[])
 
-  const addOrder = (item) => {
-    setOrder([...order, item]);
-  };
-    console.log(order)
+ 
 
   return (
     <div className='wrapper'>
-      <Header order ={order}/>
+      <Header  />
       <Routes>
- <Route path="/" element={<Home categories={categories} addOrder={addOrder} />}/>
+ <Route path="/" element={<Home categories={categories}   />}/>
  <Route path="/cart" element={<Cart />} /> 
  <Route  path="/meal/:idMeal/:price" element ={<Meal />} />
 </Routes>

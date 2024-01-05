@@ -1,9 +1,9 @@
  
 import Menu from "../../components/Menu/Menu"
-const Home = ({categories,addOrder}) => {
+const Home = ({categories}) => {
   return (
     <div>Home
-<Menu  categories={categories} addOrder={addOrder} />
+<Menu  categories={categories}  />
     </div>
   )
 }

@@ -3,7 +3,7 @@ import styles from "./Menu.module.css";
  
 
 
-const Menu = ({ categories , addOrder}) => {
+const Menu = ({ categories}) => {
  
  
 
@@ -18,7 +18,7 @@ const Menu = ({ categories , addOrder}) => {
           <div key={index}>
             {<h3>{category.strCategory}</h3> }
             <div className={styles.categoryContainer}>
-            <MenuItem category={category.strCategory} addOrder={addOrder} />
+            <MenuItem category={category.strCategory} />
             </div>
           </div>
         );

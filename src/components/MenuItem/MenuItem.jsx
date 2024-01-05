@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import styles from "./MenuItem.module.css";
 import { useEffect, useState } from 'react'
+import { addOrder } from "../../cafeSlice";
+import { useDispatch } from 'react-redux';
 
-
-const MenuItem = ({category , addOrder}) => {
+const MenuItem = ({category}) => {
   const[meals,setMeals]=useState([]);
-  
+  const dispatch = useDispatch();
 
   async function getMeals(){
     
@@ -45,7 +46,7 @@ getMeals()
             <h5>{meal.strMeal}</h5> 
             <b>Price {meal.price}$</b>
             <div className={styles.addToCart}>
-              <button onClick={() => addOrder(meal)}>ADD</button>
+              <button onClick={() => dispatch(addOrder(meal))}>ADD</button>
             </div>
           </div>
       
