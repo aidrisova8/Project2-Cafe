@@ -1,7 +1,36 @@
  header{
     background-color: rgb(122, 35, 4);
+    position: relative;
  }
 .logo{
     font-weight: 600;
     font-size: 20px;
+}
+
+header .cartButton{
+    font-size: 30px;  
+    line-height: 30px;
+    float: right;
+    cursor: pointer;
+    transition: color 500ms ease;
+    transition: transform;
+}
+
+header .cartButton:hover,
+header .cartButton.active
+{
+    color:#dc3d3d;
+transform: scale(1.5) ;
+}
+
+header .cart{
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 450px;
+    min-height: 100px;
+    -webkit-box-shadow: 4px 5px 15px -7px #606060;
+    box-shadow: 4px 5px 15px -7px #606060;
+   
+
 }
