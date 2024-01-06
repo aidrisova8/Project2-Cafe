@@ -40,3 +40,16 @@ button {
      
     /* color: white; */
   }
+  .deleteIcon{
+   color: #ca5252; 
+   float: right;
+   position: relative;
+   top: -25px;
+   cursor: pointer;
+   transition: color 500ms ease;
+  }
+
+  .deleteIcon:hover{
+    color:#d62e2e ;
+    transform: scale(1.5);
+  }

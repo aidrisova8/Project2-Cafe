@@ -11,13 +11,31 @@ const Header = () => {
    const orderCount=useSelector((state)=>state.orders.orderCount)
 console.log(orderCount)
    console.log(order)
+
    let[cartOpen, setCartOpen]=useState(false);
 
+   let total = 0;
+   let totalCount = 0;
+ 
+   order.forEach((element) => {
+     totalCount += orderCount[element.idMeal] || 0;
+     total += (Number(element.price) * (orderCount[element.idMeal] || 0));
+     
+   });
+
+
    const showOrders = () => {
-      return order.map((item) => (
-        <Order key={item.idMeal} item={item} count={orderCount[item.idMeal]}/>
-      ));
+      return (
+        <>
+          {order.map((item) => (
+            <Order key={item.idMeal} item={item} count={orderCount[item.idMeal]} />
+          ))}
+          <p className={styles.total}>Total: {new Intl.NumberFormat().format(total)}$</p>
+          <button className={styles.checkout}>CHECKOUT</button>
+        </>
+      );
     };
+    
 
     const showNothing=(()=>{
       return(

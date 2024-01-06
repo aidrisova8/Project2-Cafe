@@ -31,9 +31,17 @@ const cafeSlice = createSlice({
       if (state.orderCount[idMeal] && state.orderCount[idMeal] > 0) {
         state.orderCount[idMeal]--;
       }
+      if (state.orderCount[idMeal] === 0) {
+        state.orders=state.orders.filter(order=>order.idMeal!==idMeal);
+    }},
+
+    deleteOrder: (state, action) => {
+      const {idMeal} =action.payload;
+   state.orders=state.orders.filter(order=>order.idMeal!==idMeal);
+      
     },
   },
 });
 
-export const { addOrder, increaseOrder, decreaseOrder } = cafeSlice.actions;
+export const { addOrder, increaseOrder, decreaseOrder,deleteOrder } = cafeSlice.actions;
 export default cafeSlice.reducer;
