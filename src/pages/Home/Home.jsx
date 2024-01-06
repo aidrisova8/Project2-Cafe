@@ -2,7 +2,7 @@
 import Menu from "../../components/Menu/Menu"
 const Home = ({categories}) => {
   return (
-    <div>Home
+    <div> 
 <Menu  categories={categories}  />
     </div>
   )

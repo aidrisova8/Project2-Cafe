@@ -6,6 +6,7 @@ import { Route,Routes } from 'react-router-dom'
  import Meal from "./pages/Meal/Meal"
 import './App.css'
 import { useEffect, useState } from 'react'
+import CheckOut from './pages/CheckOut/CheckOut'
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
  <Route path="/" element={<Home categories={categories}   />}/>
  <Route path="/cart" element={<Cart />} /> 
  <Route  path="/meal/:idMeal/:price" element ={<Meal />} />
+ <Route path="/checkout" element={<CheckOut />} /> 
 </Routes>
       <Footer />
     </div>
