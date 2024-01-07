@@ -3,6 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   orders: [],
   orderCount: {},
+  customer:{},
+  receiptOrder:[]
 };
 
 const cafeSlice = createSlice({
@@ -40,8 +42,20 @@ const cafeSlice = createSlice({
    state.orders=state.orders.filter(order=>order.idMeal!==idMeal);
       
     },
+addCustomer:(state,action)=>{
+  state.customer = action.payload;
+},
+
+clearCart: (state, action) => {
+  state.receiptOrder = state.orders.map(item => ({
+    ...item,
+    count: state.orderCount[item.idMeal] || 0
+  }));
+  state.orders = [];
+  state.orderCount = {};
+},
   },
 });
 
-export const { addOrder, increaseOrder, decreaseOrder,deleteOrder } = cafeSlice.actions;
+export const { addOrder, increaseOrder, decreaseOrder,deleteOrder,addCustomer,clearCart} = cafeSlice.actions;
 export default cafeSlice.reducer;

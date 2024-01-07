@@ -1,9 +1,13 @@
 import styles from "./CheckOut.module.css"
 import { useState } from "react";
+import Receipt from "../../components/Receipt/Receipt"
+import { useDispatch } from 'react-redux';
+import { addCustomer, clearCart } from "../../cafeSlice";
 
 const CheckOut = () => {
 
-  
+  const dispatch = useDispatch();
+
   let[form,setForm]=useState({
     firstName:'', 
     lastName:'',
@@ -16,41 +20,66 @@ const CheckOut = () => {
     cardDate:'',
     state:'',
   })
-
+console.log(form)
   function handleChange(e){
 setForm({... form, [e.target.id]: e.target.value})
 }
 
 
-function handleSubmit(){
-
+function handleSubmit(e){
+  e.preventDefault();
+let customer={
+  firstName:form.firstName, 
+  lastName:form.lastName,
+  phone:form.phone,
+  email:form.email,
+  address:form.address,
+  city:form.city,
+  zip:form.zip,
+  card:form.card,
+  cardDate:form.cardDate,
+  state:form.state
 }
 
-// function handleChangeSelect(){
-//   setForm({ ...form, state: e.target.value });
-// }
+setForm({
+  firstName:'', 
+  lastName:'',
+  phone:'',
+  email:'',
+  address:'',
+  city:'',
+  zip:'',
+  card:'',
+  cardDate:'',
+  state:''
+})
+dispatch(addCustomer(customer));
+dispatch(clearCart())
+}
+
+ 
 
   return (
+    <>
+    <div>
+      <Receipt />
+    </div>
     <form onSubmit={handleSubmit}>
-    <label htmlFor="firstName">First Name: </label>
+     
     <input  id="firstName" value={form.firstName} onChange={handleChange} placeholder="First Name"/>
 
-    <label htmlFor="lastName">Last Name: </label>
-    <input  id="lastName" value={form.lastName} onChange={handleChange}/>
+    <input  id="lastName" value={form.lastName} onChange={handleChange} placeholder="Last Name"/>
 
-    <label htmlFor="phone">Phone: </label>
-    <input type="number" id="phone" value={form.phone} onChange={handleChange}/>
+    <input  id="phone" value={form.phone} onChange={handleChange} placeholder="Phone"/>
 
-    <label htmlFor="email">Email: </label>
-    <input  id="email" value={form.email} onChange={handleChange}/>
+    <input  id="email" value={form.email} onChange={handleChange} placeholder="Email"/>
 
-   <label htmlFor="adress">Adress Line: </label>
-   <input id="address" value={form.address} onChange={handleChange} />
+   <input id="address" value={form.address} onChange={handleChange} placeholder="Adress Line" />
 
-   <label htmlFor="city">City: </label>
-   <input id="city" value={form.city} onChange={handleChange} />
+   <input id="city" value={form.city} onChange={handleChange} placeholder="City"/>
 
    <select id="state" value={form.state} onChange={handleChange}>
+
    <option value="" selected disabled hidden>Choose state</option>
 	<option value="AL">Alabama</option>
 	<option value="AK">Alaska</option>
@@ -105,17 +134,15 @@ function handleSubmit(){
 	<option value="WY">Wyoming</option>
 </select>
 
-   <label htmlFor="zip">Zip Code: </label>
-   <input type="number" id="zip" value={form.zip} onChange={handleChange} />
+   <input  id="zip" value={form.zip} onChange={handleChange} placeholder="Zip Code" />
 
-   <label htmlFor="card">Card #: </label>
-   <input type="number" id="card" value={form.card} onChange={handleChange} />
+   <input id="card" value={form.card} onChange={handleChange} placeholder="Card #" />
 
-   <label htmlFor="cardDate">Exp. Date: </label>
-   <input id="cardDate" value={form.cardDate} onChange={handleChange} />
+   <input id="cardDate" value={form.cardDate} onChange={handleChange} placeholder="Exp. Date:" />
 
     <button>Submit</button>
 </form>
+</>
   )
 }
 
