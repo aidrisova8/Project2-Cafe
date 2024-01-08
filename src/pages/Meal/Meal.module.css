@@ -1,0 +1,58 @@
+.descriptionWrapper {
+    display:flex;
+    justify-content: space-evenly;
+    padding: 100px 0px;
+    font-weight: 400;
+
+  }
+  
+  .sectionLeft {
+    text-align: left;  
+  }
+  
+  .sectionLeft h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  .sectionLeft img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  
+  .sectionLeft h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .sectionLeft p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .sectionLeft b {
+    font-size: 20px;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .addToCart button {
+    background-color: #ec6666;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .addToCart button:hover {
+    background-color: #ee3838;
+  }
+  
+  .sectionRight {
+    margin-left: 30px;
+  }

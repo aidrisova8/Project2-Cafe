@@ -19,22 +19,22 @@ const Receipt = () => {
         <h1>Order Details</h1>
   
         {order.map((el) => (
-          <Fragment key={el.idMeal}>
+          <div key={el.idMeal}>
             <h4>Dish Name: {el.strMeal}</h4>
             <p>Quantity: {el.count || 0}</p>
             <p>Price: {el.price}</p>
-          </Fragment>
+          </div>
         ))}
   
-        <Fragment>
+        <div className={styles.lowerContainer}>
           <p>First Name: {customer.firstName}</p>
           <p>Last Name: {customer.lastName}</p>
           <p>Phone: {customer.phone}</p>
           <p>Email: {customer.email}</p>
           <p>Address: {customer.addressLine} {customer.city}  {customer.state}  {customer.zip}</p>
-        </Fragment>
+        </div>
   
-        <p>Total Amount: {new Intl.NumberFormat().format(total)}$</p>
+        <b>Total Amount: {new Intl.NumberFormat().format(total)}$</b>
       </div>
     );
   };

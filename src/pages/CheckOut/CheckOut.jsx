@@ -64,7 +64,7 @@ dispatch(clearCart())
     <div>
       <Receipt />
     </div>
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.form}>
      
     <input  id="firstName" value={form.firstName} onChange={handleChange} placeholder="First Name"/>
 

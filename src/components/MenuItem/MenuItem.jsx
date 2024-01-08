@@ -14,7 +14,7 @@ const MenuItem = ({category}) => {
       const response=await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
       const data=await response.json();
     //console.log(data.meals)
-    let newMeals=data.meals.slice(0,5).map(item=>{
+    let newMeals=data.meals.slice(0,3).map(item=>{
       const randomPrice=(Math.random()*(30-5+1)+5).toFixed(2)
       return{
         price:randomPrice,

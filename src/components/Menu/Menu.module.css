@@ -1,4 +1,13 @@
-categoryContainer{
-     
-
-}
+.foodList {
+    margin: 20px 0px;
+    h3 {
+      margin-bottom: 10px;
+      font-weight: 400;
+    }
+  }
+  
+  /* .foodContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 15px;
+  } */

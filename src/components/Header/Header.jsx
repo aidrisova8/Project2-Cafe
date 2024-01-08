@@ -31,11 +31,11 @@ console.log(orderCount)
             <Order key={item.idMeal} item={item} count={orderCount[item.idMeal]} />
           ))}
           <p className={styles.total}>Total: {new Intl.NumberFormat().format(total)}$</p>
-          <button className={styles.checkout} onClick={() => setCartOpen(false)}>
-            <Link to="/checkout" >
+          <Link  to="/checkout" > <button className={styles.checkout} onClick={() => setCartOpen(false)}>
+           
   CHECKOUT
-</Link>
-</button>
+
+</button></Link>
         </>
       );
     };

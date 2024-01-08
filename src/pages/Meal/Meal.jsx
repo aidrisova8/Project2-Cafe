@@ -28,13 +28,19 @@ const[mealDescription, setMealDescription]=useState([])
  
   return (
     <div className={styles.descriptionWrapper}>
+      <div className={styles.sectionLeft}>
  <h1>{mealDescription[0]?.strMeal}</h1>
- <img src={mealDescription[0]?.strMealThumb} />
+
  <h3>Cuisine {mealDescription[0]?.strArea}</h3>
  <p>{mealDescription[0]?.strInstructions}</p>
 <b>Price {price}$</b>
  <div className={styles.addToCart}>
               <button onClick={()=>dispatch(addOrder({strMeal:mealDescription[0]?.strMeal,price,idMeal,strMealThumb:mealDescription[0]?.strMealThumb}))}>ADD</button>
+            </div>
+            </div>
+            <div className={styles.sectionRight}>
+            <img src={mealDescription[0]?.strMealThumb} />
+
             </div>
          
   </div>
