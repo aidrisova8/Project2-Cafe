@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import styles from "./Receipt.module.css"
-import { Fragment,  useState } from "react";
+import { Fragment } from "react";
 
 
 const Receipt = () => {

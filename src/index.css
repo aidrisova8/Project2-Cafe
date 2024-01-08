@@ -9,8 +9,11 @@ body{
     color: #222;
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
+    position: relative;
+  
+   
 }
-/* .wrapper{
+.wrapper{
     width: 1280px;
     margin: 50px auto;
-} */
+}

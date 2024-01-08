@@ -54,13 +54,16 @@ console.log(orderCount)
         <div>
             <span className={styles.logo}>Harmony Café and Spa</span>
         </div>
-        <Link to='/'>
-        <div>Menu</div>
-        </Link>
+        <ul className={styles.nav}>
+        <Link to='/'><li>  Menu </li> </Link>
+<li>Login</li>
+        </ul>
+      
         <FaShoppingBag onClick={()=>setCartOpen(cartOpen=!cartOpen)} className={`${styles.cartButton} ${cartOpen ? styles.active : ''}`} />
 {cartOpen && (
    <div className={styles.cart}>
       {order.length>0 ? showOrders() : showNothing()} 
+ 
  
    </div>
 )}

@@ -2,7 +2,7 @@
     width: 100%; 
     float: left;  
     margin-bottom: 20px;
-  
+    
    }
 .item img{
        width:80px; 
@@ -16,7 +16,7 @@
       }
 
 b, h4{
-   color: #797979;
+  
    font-weight: 600; 
 }      
 
