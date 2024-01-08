@@ -39,11 +39,11 @@ getMeals()
        // console.log(meal)
         return (
         
-          <div key={meal.idMeal}>
+          <div key={meal.idMeal} className={styles.item}>
              <Link key={meal.idMeal} to={'/meal/'+meal.idMeal+"/"+meal.price} > 
             <img src={meal.strMealThumb} /> 
             </Link>
-            <h5>{meal.strMeal}</h5> 
+            <h2>{meal.strMeal}</h2> 
             <b>Price {meal.price}$</b>
             <div className={styles.addToCart}>
               <button onClick={() => dispatch(addOrder(meal))}>ADD</button>
