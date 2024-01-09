@@ -21,4 +21,7 @@ Technologies Used:
 Deployment:
 Used Netlify
 
+Setup/Instalation Requirements:
 
+To view the website,
+copy the link https://vocal-piroshki-bd92ac.netlify.app/ paste it to your browser and load it.
