@@ -18,8 +18,9 @@ function App() {
     try {
       const response=await fetch("https://www.themealdb.com/api/json/v1/1/list.php?c=list")
       const data=await response.json();
-    //  console.log(data.meals)
-      setCategories(data.meals)
+  console.log(data.meals)
+    const filteredCategories = data.meals.filter(category => category.strCategory != "Goat" && category.strCategory != "Miscellaneous"&& category.strCategory != "Lamb");
+    setCategories(filteredCategories);
     } catch (error) {
       console.log(error.message)
     }

@@ -4,15 +4,13 @@
 } */
 .mealsContainer{
     /* display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat( 220px, 4fr);
     grid-gap: 15px ; */
     display: flex;
     width: 100%;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 0;
-    padding: 0;
-     
+   
 
 
 }
