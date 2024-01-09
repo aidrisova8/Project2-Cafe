@@ -58,8 +58,8 @@ transform: scale(1.5) ;
 header .cart{
    
     position: absolute;
-    top: 30px;
-    right: 0;
+    top: 81px;
+    right: 20px;
     width: 450px;
     -webkit-box-shadow: 4px 5px 15px -7px #606060;
     box-shadow: 4px 5px 15px -7px #606060;
