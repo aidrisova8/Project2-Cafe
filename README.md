@@ -7,3 +7,12 @@ Features:
 -View and manage the cart.
 -Proceed to checkout and enter customer details.
 -View order details and receipt.
+
+Technologies Used
+-React useState
+-React Router
+-Redux
+-React useEffect
+-CSS Modules
+-HTML
+-JSX
