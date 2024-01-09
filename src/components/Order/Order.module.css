@@ -15,11 +15,12 @@
         margin-bottom: 10px;
       }
 
-b, h4{
+.item b, h4{
   
    font-weight: 600; 
 }      
 
+ 
 button {
     padding: 5px 13px;
     font-size: 16px;
@@ -27,17 +28,18 @@ button {
     border: none;
     border-radius: 4px;
     margin: 5px;
+
   }
   
    
   button.increase {
-     
+    width: 50px;
     /* color: white; */
   }
   
  
   button.decrease {
-     
+    width: 50px;   
     /* color: white; */
   }
   .deleteIcon{
@@ -52,4 +54,8 @@ button {
   .deleteIcon:hover{
     color:#d62e2e ;
     transform: scale(1.5);
+  }
+  .incDecrBtns{
+
+    display: flex;
   }

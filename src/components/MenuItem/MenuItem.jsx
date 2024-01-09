@@ -39,7 +39,7 @@ getMeals()
        // console.log(meal)
         return (
         
-          <div key={meal.idMeal} className={styles.item}>
+          <div key={meal.idMeal} className={styles.meal}>
              <Link key={meal.idMeal} to={'/meal/'+meal.idMeal+"/"+meal.price} > 
             <img src={meal.strMealThumb} /> 
             </Link>

@@ -12,8 +12,10 @@ const Order = ({ item, count }) => {
       <h2>{item.strMeal}</h2> 
       <b>Price {item.price}$</b>
       <h4>Quantity: {count}</h4>
+      <div className={styles.incDecrBtns}>
       <button className={styles.increase} onClick={() => dispatch(increaseOrder({ idMeal: item.idMeal }))}>+</button> 
       <button className={styles.decrease} onClick={() => dispatch(decreaseOrder({ idMeal: item.idMeal }))}>-</button>
+      </div>
       <FaTrash className={styles.deleteIcon} onClick={()=>dispatch(deleteOrder( { idMeal: item.idMeal }))} />
     </div>
   );
