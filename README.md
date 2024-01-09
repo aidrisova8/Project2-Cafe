@@ -25,3 +25,6 @@ Setup/Instalation Requirements:
 
 To view the website,
 copy the link https://vocal-piroshki-bd92ac.netlify.app/ paste it to your browser and load it.
+
+Known Bugs:
+The current experience of order details appearing only after form submission will be improved to provide a more intuitive user experience.
