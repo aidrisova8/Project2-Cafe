@@ -57,6 +57,7 @@ console.log(orderCount)
         <ul className={styles.nav}>
         <Link to='/'><li>  Menu </li> </Link>
 <li>Login</li>
+<li>Sign up</li>
         </ul>
       
         <FaShoppingBag onClick={()=>setCartOpen(cartOpen=!cartOpen)} className={`${styles.cartButton} ${cartOpen ? styles.active : ''}`} />
