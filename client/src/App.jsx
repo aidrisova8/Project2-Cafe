@@ -62,7 +62,7 @@ useEffect(() => {
 
   return (
     <div className='wrapper'>
-      <Header  />
+      <Header username={user.firstname} setUser={setUser} />
       <Routes>
  <Route path="/" element={<Home categories={categories}   />}/>
  <Route path="/cart" element={<Cart />} /> 
@@ -70,7 +70,7 @@ useEffect(() => {
  <Route path="/checkout" element={<CheckOut />} /> 
  <Route path="/register" element={<Register setUser={setUser}/>} />
   <Route path="/login" element={<Login setUser={setUser}/>} />
-  <Route path="/profile" element={<Profile username={user.username} email={user.email}/>} />
+  <Route path="/profile" element={<Profile username={user.firstname} email={user.email}/>} />
 </Routes>
       <Footer />
     </div>

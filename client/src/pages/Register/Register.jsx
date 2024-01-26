@@ -7,7 +7,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 let emptyForm = { 
-    username: '',
+    firstname: '',
+    lastname: '',
     password: '',
     email: ''
 }
@@ -56,19 +57,10 @@ function Register({ setUser }) {
 
     return ( 
         <>
-            <h1>Register</h1>
+            <h1>Create an Account</h1>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="username">Username:</label>
-                <br />
-                <input 
-                    type="text" 
-                    id="username"
-                    name="username"
-                    onChange={handleChange}
-                    value={form.username}
-                />
-                <br /><br />
-                <label htmlFor="email">Email:</label>
+               
+                <label htmlFor="email">Email*</label>
                 <br />
                 <input 
                     type="email" 
@@ -78,7 +70,27 @@ function Register({ setUser }) {
                     value={form.email}
                 />
                 <br /><br />
-                <label htmlFor="password">Password:</label>
+                <label htmlFor="firstname">First Name*</label>
+                <br />
+                <input 
+                    type="text" 
+                    id="firstname"
+                    name="firstname"
+                    onChange={handleChange}
+                    value={form.firstname}
+                />
+                <br /><br />
+                <label htmlFor="lastname">Last Name*</label>
+                <br />
+                <input 
+                    type="text" 
+                    id="lastname"
+                    name="lastname"
+                    onChange={handleChange}
+                    value={form.lastname}
+                />
+                <br /><br />
+                <label htmlFor="password">Password*</label>
                 <br />
                 <input 
                     type="password" 
@@ -88,7 +100,7 @@ function Register({ setUser }) {
                     value={form.password}
                 />
                 <br /><br />
-                <button>Submit</button>
+                <button>Join</button>
             </form>
         </>
      );
