@@ -53,35 +53,33 @@ function Login({ setUser }) {
         }
     }
 
-    return ( 
-        <>
-            <h1>Login</h1>
-            <form onSubmit={handleSubmit}>
-                {/* <label htmlFor="username">Username:</label> */}
-                <br />
-                <input 
-                    placeholder='Email'
-                    type="text" 
-                    id="email"
-                    name="email"
-                    onChange={handleChange}
-                    value={form.email}
-                />
-                <br /><br />
-                {/* <label htmlFor="password">Password:</label> */}
-                <br />
-                <input 
-                    placeholder='Password'
-                    type="password" 
-                    id="password"
-                    name="password"
-                    onChange={handleChange}
-                    value={form.password}
-                />
-                <br /><br />
-                <button>Login</button>
-            </form>
-        </>
+    return (
+        <div className={styles.wrapper}> 
+        <div className={styles.loginContainer}>
+        <h1 className={styles.loginTitle}>Login To My Account</h1>
+        <form className={styles.loginForm} onSubmit={handleSubmit}>
+            <input
+                className={styles.loginInput}
+                placeholder='Email'
+                type="text"
+                id="email"
+                name="email"
+                onChange={handleChange}
+                value={form.email}
+            />
+            <input
+                className={styles.loginInput}
+                placeholder='Password'
+                type="password"
+                id="password"
+                name="password"
+                onChange={handleChange}
+                value={form.password}
+            />
+            <button className={styles.loginButton}>Login</button>
+        </form>
+    </div>
+    </div>
      );
 }
 

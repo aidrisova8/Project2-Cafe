@@ -56,13 +56,14 @@ function Register({ setUser }) {
     }
 
     return ( 
-        <>
-            <h1>Create an Account</h1>
-            <form onSubmit={handleSubmit}>
+        <div className={styles.wrapper}> 
+        <div className={styles.registerContainer}>
+            <h1 className={styles.registerTitle}>Create an Account</h1>
+            <form className={styles.registerForm} onSubmit={handleSubmit}>
                
-                <label htmlFor="email">Email*</label>
+                <label className={styles.registerLabel} htmlFor="email">Email*</label>
                 <br />
-                <input 
+                <input  className={styles.registerInput}
                     type="email" 
                     id="email"
                     name="email"
@@ -70,9 +71,9 @@ function Register({ setUser }) {
                     value={form.email}
                 />
                 <br /><br />
-                <label htmlFor="firstname">First Name*</label>
+                <label className={styles.registerLabel} htmlFor="firstname">First Name*</label>
                 <br />
-                <input 
+                <input   className={styles.registerInput}
                     type="text" 
                     id="firstname"
                     name="firstname"
@@ -80,9 +81,9 @@ function Register({ setUser }) {
                     value={form.firstname}
                 />
                 <br /><br />
-                <label htmlFor="lastname">Last Name*</label>
+                <label className={styles.registerLabel} htmlFor="lastname">Last Name*</label>
                 <br />
-                <input 
+                <input  className={styles.registerInput}
                     type="text" 
                     id="lastname"
                     name="lastname"
@@ -90,9 +91,9 @@ function Register({ setUser }) {
                     value={form.lastname}
                 />
                 <br /><br />
-                <label htmlFor="password">Password*</label>
+                <label className={styles.registerLabel} htmlFor="password">Password*</label>
                 <br />
-                <input 
+                <input  className={styles.registerInput}
                     type="password" 
                     id="password"
                     name="password"
@@ -100,9 +101,10 @@ function Register({ setUser }) {
                     value={form.password}
                 />
                 <br /><br />
-                <button>Join</button>
+                <button className={styles.registerButton}>Join</button>
             </form>
-        </>
+            </div>
+    </div>
      );
 }
 

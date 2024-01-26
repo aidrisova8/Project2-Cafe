@@ -2,8 +2,8 @@ footer{
     text-align: center;
     position: fixed;
     bottom: 0;
-    width: 100%;
-    background-color: #f8f8f8;  
+    width: 100vw;
+    /* background-color: rgb(153, 96, 96);   */
     padding: 10px;  
     height: 40px;
 
