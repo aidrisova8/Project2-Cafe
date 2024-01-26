@@ -6,6 +6,7 @@ try {
     const foundUser=  await User.findById(req.id)
     res.status(200).json({
     firstname:foundUser.firstname,
+    lastname:foundUser.lastname,
     email:foundUser.email
 })
 } catch (err ) {
