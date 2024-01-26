@@ -54,8 +54,12 @@ clearCart: (state, action) => {
   state.orders = [];
   state.orderCount = {};
 },
+clearReceipt: (state, action) => {
+  state.receiptOrder = {}
+  
+},
   },
 });
 
-export const { addOrder, increaseOrder, decreaseOrder,deleteOrder,addCustomer,clearCart} = cafeSlice.actions;
+export const { addOrder, increaseOrder, decreaseOrder,deleteOrder,addCustomer,clearCart,clearReceipt} = cafeSlice.actions;
 export default cafeSlice.reducer;

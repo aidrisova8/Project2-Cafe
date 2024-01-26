@@ -4,13 +4,16 @@ import { FaShoppingBag } from "react-icons/fa";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import Order from "../Order/Order";
-
-
+import { clearCart, clearReceipt } from "../../cafeSlice";
+import { useDispatch } from 'react-redux';
+ 
 const Header = ({ username, setUser }) => {
-
+  // const orderReceipt = useSelector((state) => state.orders.receiptOrder);
+  const dispatch = useDispatch();
    const logout = () => {
       localStorage.removeItem("token")
       setUser({})
+    // dispatch(clearReceipt())
     };
    const order  = useSelector((state) => state.orders.orders)
    const orderCount=useSelector((state)=>state.orders.orderCount)

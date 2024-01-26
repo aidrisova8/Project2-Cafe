@@ -31,7 +31,7 @@ const Receipt = ({orderDetails}) => {
           <p>Last Name: {orderDetails.lastname}</p>
           <p>Phone: {orderDetails.phone}</p>
           <p>Email: {orderDetails.email}</p>
-          <p>Address: {customer.addressLine} {customer.city}  {customer.state}  {customer.zip}</p>
+          <p>Address: {orderDetails.addressLine} {orderDetails.city}  {orderDetails.state}  {orderDetails.zip}</p>
         </div>
   
         <b>Total Amount: {new Intl.NumberFormat().format(total)}$</b>
