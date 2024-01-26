@@ -26,12 +26,34 @@ function App() {
     }
   }
 
-
-  
-  useEffect(()=>{
-    getAttribute();
+  // useEffect(()=>{
+  //   getAttribute();
     
-  },[])
+  // },[])
+  const [user, setUser] = useState({})
+  async function getUser(token) {
+    try {
+        const response = await axios.get('/api/users', {
+            headers: {
+                Authorization: token
+            }
+        })
+
+        setUser(response.data)
+    } catch (error) {
+        console.log(error)
+        localStorage.removeItem('token')
+    }
+}
+
+useEffect(() => {
+  getAttribute();
+
+    const token = localStorage.getItem('token')
+    if (token) {
+        getUser(token)
+    } 
+}, [])
 
  
 
@@ -43,6 +65,9 @@ function App() {
  <Route path="/cart" element={<Cart />} /> 
  <Route  path="/meal/:idMeal/:price" element ={<Meal />} />
  <Route path="/checkout" element={<CheckOut />} /> 
+ <Route path="/register" element={<Register setUser={setUser}/>} />
+  <Route path="/login" element={<Login setUser={setUser}/>} />
+  <Route path="/profile" element={<Profile username={user.username} email={user.email}/>} />
 </Routes>
       <Footer />
     </div>
