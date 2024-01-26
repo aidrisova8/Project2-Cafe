@@ -42,7 +42,7 @@ function Login({ setUser }) {
                     Authorization: token
                 }
             })
-
+            console.log(userResponse)
             setUser(userResponse.data)
     
             navigate('/profile')

@@ -6,7 +6,8 @@ export default defineConfig({
   server: {
     proxy: {
       '/auth': 'http://localhost:5000',
-      '/api': 'http://localhost:5000'
+      '/api': 'http://localhost:5000',
+      '/order': 'http://localhost:5000'
     }
   },
   plugins: [react()],

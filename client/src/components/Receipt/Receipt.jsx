@@ -3,9 +3,9 @@ import styles from "./Receipt.module.css"
 import { Fragment } from "react";
 
 
-const Receipt = () => {
+const Receipt = ({orderDetails}) => {
     const order = useSelector((state) => state.orders.receiptOrder);
-    const customer = useSelector((state) => state.orders.customer);
+    // const customer = useSelector((state) => state.orders.customer);
 
      console.log(JSON.stringify(order, null, 2));
     let total = 0;
@@ -27,10 +27,10 @@ const Receipt = () => {
         ))}
   
         <div className={styles.lowerContainer}>
-          <p>First Name: {customer.firstName}</p>
-          <p>Last Name: {customer.lastName}</p>
-          <p>Phone: {customer.phone}</p>
-          <p>Email: {customer.email}</p>
+          <p>First Name: {orderDetails.firstname}</p>
+          <p>Last Name: {orderDetails.lastname}</p>
+          <p>Phone: {orderDetails.phone}</p>
+          <p>Email: {orderDetails.email}</p>
           <p>Address: {customer.addressLine} {customer.city}  {customer.state}  {customer.zip}</p>
         </div>
   

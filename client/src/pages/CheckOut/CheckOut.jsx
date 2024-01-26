@@ -3,14 +3,17 @@ import { useState } from "react";
 import Receipt from "../../components/Receipt/Receipt"
 import { useDispatch } from 'react-redux';
 import { addCustomer, clearCart } from "../../cafeSlice";
+import axios from "axios";
 
-const CheckOut = () => {
+const CheckOut = ({user}) => {
+
+  let[orderDetails,setOrderDetails]=useState({})
 
   const dispatch = useDispatch();
 
   let[form,setForm]=useState({
-    firstName:'', 
-    lastName:'',
+    firstname:'', 
+    lastname:'',
     phone:'',
     email:'',
     address:'',
@@ -21,16 +24,17 @@ const CheckOut = () => {
     state:'',
   })
 console.log(form)
+
   function handleChange(e){
 setForm({... form, [e.target.id]: e.target.value})
 }
 
 
-function handleSubmit(e){
+async function handleSubmit (e){
   e.preventDefault();
 let customer={
-  firstName:form.firstName, 
-  lastName:form.lastName,
+  firstname:form.firstname, 
+  lastname:form.lastname,
   phone:form.phone,
   email:form.email,
   address:form.address,
@@ -41,9 +45,13 @@ let customer={
   state:form.state
 }
 
+const response = await axios.post(`/order/${user._id}`, form)
+console.log(response)
+setOrderDetails(response)
+
 setForm({
-  firstName:'', 
-  lastName:'',
+  firstname:'', 
+  lastname:'',
   phone:'',
   email:'',
   address:'',
@@ -62,25 +70,25 @@ dispatch(clearCart())
   return (
     <>
     <div>
-      <Receipt />
+      <Receipt orderDetails={orderDetails}/>
     </div>
     <form onSubmit={handleSubmit} className={styles.form}>
      
-    <input  id="firstName" value={form.firstName} onChange={handleChange} placeholder="First Name"/>
+    <input type="text" name="firstname" id="firstname" value={form.firstname} onChange={handleChange} placeholder="First Name"/>
 
-    <input  id="lastName" value={form.lastName} onChange={handleChange} placeholder="Last Name"/>
+    <input type="text" name="lastname" id="lastname" value={form.lastname} onChange={handleChange} placeholder="Last Name"/>
 
-    <input  id="phone" value={form.phone} onChange={handleChange} placeholder="Phone"/>
+    <input type="number" name="phone" id="phone" value={form.phone} onChange={handleChange} placeholder="Phone"/>
 
-    <input  id="email" value={form.email} onChange={handleChange} placeholder="Email"/>
+    <input type="email" name="email" id="email" value={form.email} onChange={handleChange} placeholder="Email"/>
 
-   <input id="address" value={form.address} onChange={handleChange} placeholder="Adress Line" />
+   <input type="text" name="address" id="address" value={form.address} onChange={handleChange} placeholder="Adress Line" />
 
-   <input id="city" value={form.city} onChange={handleChange} placeholder="City"/>
+   <input type="text" name="city" id="city" value={form.city} onChange={handleChange} placeholder="City"/>
 
-   <select id="state" value={form.state} onChange={handleChange}>
+   <select type="text" name="state" id="state" value={form.state} onChange={handleChange}>
 
-   <option value="" selected disabled hidden>Choose state</option>
+   <option value="" >Choose state</option>
 	<option value="AL">Alabama</option>
 	<option value="AK">Alaska</option>
 	<option value="AZ">Arizona</option>
@@ -134,11 +142,11 @@ dispatch(clearCart())
 	<option value="WY">Wyoming</option>
 </select>
 
-   <input  id="zip" value={form.zip} onChange={handleChange} placeholder="Zip Code" />
+   <input type="number" name="zip"  id="zip" value={form.zip} onChange={handleChange} placeholder="Zip Code" />
 
-   <input id="card" value={form.card} onChange={handleChange} placeholder="Card #" />
+   <input type="number" name="card" id="card" value={form.card} onChange={handleChange} placeholder="Card #" />
 
-   <input id="cardDate" value={form.cardDate} onChange={handleChange} placeholder="Exp. Date:" />
+   <input type="text" name="cardDate" id="cardDate" value={form.cardDate} onChange={handleChange} placeholder="Exp. Date:" />
 
     <button>Submit</button>
 </form>

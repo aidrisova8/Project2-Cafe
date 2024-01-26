@@ -10,7 +10,7 @@ import { Route,Routes } from 'react-router-dom'
 import './App.css'
 import { useEffect, useState } from 'react'
 import CheckOut from './pages/CheckOut/CheckOut'
-
+import axios from 'axios'
 
 function App() {
   const[categories, setCategories]=useState([]);
@@ -41,7 +41,7 @@ function App() {
                 Authorization: token
             }
         })
-
+console.log(response.data)
         setUser(response.data)
     } catch (error) {
         console.log(error)
@@ -53,6 +53,7 @@ useEffect(() => {
   getAttribute();
 
     const token = localStorage.getItem('token')
+    console.log(token)
     if (token) {
         getUser(token)
     } 
@@ -67,7 +68,7 @@ useEffect(() => {
  <Route path="/" element={<Home categories={categories}   />}/>
  <Route path="/cart" element={<Cart />} /> 
  <Route  path="/meal/:idMeal/:price" element ={<Meal />} />
- <Route path="/checkout" element={<CheckOut />} /> 
+ <Route path="/checkout" element={<CheckOut user={user} />} /> 
  <Route path="/register" element={<Register setUser={setUser}/>} />
   <Route path="/login" element={<Login setUser={setUser}/>} />
   <Route path="/profile" element={<Profile user={user}/>} />
