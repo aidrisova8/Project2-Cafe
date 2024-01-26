@@ -5,7 +5,7 @@ async function show(req, res) {
 try {
     const foundUser=  await User.findById(req.id)
     res.status(200).json({
-    username:foundUser.username,
+    firstname:foundUser.firstname,
     email:foundUser.email
 })
 } catch (err ) {

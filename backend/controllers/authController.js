@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken')
 
 
 function generateToken(newUser){
-    const payload = { id: newUser._id, username: newUser.username }
+    const payload = { id: newUser._id, email: newUser.email }
     //expiresIn:"7d" can be
     return jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: 30 })
 }
@@ -14,7 +14,7 @@ async function register(req, res) {
     try {
         // 1. Check if the user exists 
 
-        const foundUser = await User.findOne({ username: req.body.username })
+        const foundUser = await User.findOne({ email: req.body.email })
 
         if (foundUser) {
             return res.status(400).json({ error: 'User already exists' })

@@ -7,7 +7,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 let emptyForm = { 
-    username: '',
+    email: '',
     password: ''
 }
 
@@ -57,19 +57,21 @@ function Login({ setUser }) {
         <>
             <h1>Login</h1>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="username">Username:</label>
+                {/* <label htmlFor="username">Username:</label> */}
                 <br />
                 <input 
+                    placeholder='Email'
                     type="text" 
-                    id="username"
-                    name="username"
+                    id="email"
+                    name="email"
                     onChange={handleChange}
-                    value={form.username}
+                    value={form.email}
                 />
                 <br /><br />
-                <label htmlFor="password">Password:</label>
+                {/* <label htmlFor="password">Password:</label> */}
                 <br />
                 <input 
+                    placeholder='Password'
                     type="password" 
                     id="password"
                     name="password"
@@ -77,7 +79,7 @@ function Login({ setUser }) {
                     value={form.password}
                 />
                 <br /><br />
-                <button>Submit</button>
+                <button>Login</button>
             </form>
         </>
      );
