@@ -4,6 +4,9 @@ import { Route,Routes } from 'react-router-dom'
  import Home from "./pages/Home/Home"
  import Cart from "./pages/Cart/Cart"
  import Meal from "./pages/Meal/Meal"
+ import Register from "./pages/Register/Register"
+ import Login from "./pages/Login/Login"
+ import Profile from "./pages/Profile/Profile"
 import './App.css'
 import { useEffect, useState } from 'react'
 import CheckOut from './pages/CheckOut/CheckOut'

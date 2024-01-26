@@ -6,7 +6,12 @@ import { useSelector } from "react-redux";
 import Order from "../Order/Order";
 
 
-const Header = () => {
+const Header = ({ username, setUser }) => {
+
+   const logout = () => {
+      localStorage.removeItem("token")
+      setUser({})
+    };
    const order  = useSelector((state) => state.orders.orders)
    const orderCount=useSelector((state)=>state.orders.orderCount)
 console.log(orderCount)
@@ -56,8 +61,26 @@ console.log(orderCount)
         </div>
         <ul className={styles.nav}>
         <Link to='/'><li>  Menu </li> </Link>
-<li>Login</li>
-<li>Sign up</li>
+{username ? 
+        <>
+          <li style={{ color: "black" }}>Welcome {username}!</li>
+          <li>
+            <Link to="/profile">Profile</Link>
+          </li>
+          <li onClick={logout}>
+            <Link to="/login">Logout</Link>
+          </li>
+        </>
+       : 
+        <>
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+          <li>
+            <Link to="/register">Sign up</Link>
+          </li>
+        </>
+      }
         </ul>
       
         <FaShoppingBag onClick={()=>setCartOpen(cartOpen=!cartOpen)} className={`${styles.cartButton} ${cartOpen ? styles.active : ''}`} />
