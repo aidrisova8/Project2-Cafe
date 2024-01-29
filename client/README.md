@@ -13,6 +13,9 @@ Features:
 -View order details and receipt.
 -Footer section.
 -Header section.
+-Login page.
+-Register page.
+-Profile page.
 
 Technologies Used:
 -React useState
@@ -21,9 +24,14 @@ Technologies Used:
 -React useEffect
 -CSS Modules
 -JSX
+-MongoDB/Mongoose
+-Express
+-Jsonwebtoken
+
 
 Deployment:
 Used Netlify.
+Used render.com
 
 Setup/Instalation Requirements:
 
