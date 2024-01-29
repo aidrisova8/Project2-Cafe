@@ -71,7 +71,7 @@ useEffect(() => {
  <Route path="/checkout" element={<CheckOut user={user} />} /> 
  <Route path="/register" element={<Register setUser={setUser}/>} />
   <Route path="/login" element={<Login setUser={setUser}/>} />
-  <Route path="/profile" element={<Profile user={user}/>} />
+  <Route path="/profile" element={<Profile user={user}/>}/>
 </Routes>
       <Footer />
     </div>

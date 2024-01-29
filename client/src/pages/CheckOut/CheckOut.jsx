@@ -73,14 +73,14 @@ dispatch(clearCart())
       <Receipt orderDetails={orderDetails}/>
     </div>
     <form onSubmit={handleSubmit} className={styles.form}>
+
+    <input type="email" name="email" id="email" value={form.email} onChange={handleChange} placeholder="Email"/>
      
     <input type="text" name="firstname" id="firstname" value={form.firstname} onChange={handleChange} placeholder="First Name"/>
 
     <input type="text" name="lastname" id="lastname" value={form.lastname} onChange={handleChange} placeholder="Last Name"/>
 
     <input type="number" name="phone" id="phone" value={form.phone} onChange={handleChange} placeholder="Phone"/>
-
-    <input type="email" name="email" id="email" value={form.email} onChange={handleChange} placeholder="Email"/>
 
    <input type="text" name="address" id="address" value={form.address} onChange={handleChange} placeholder="Adress Line" />
 

@@ -1,0 +1,12 @@
+
+.profileWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profileContainer {
+    margin: 60px;
+    padding: 15px;
+  
+}

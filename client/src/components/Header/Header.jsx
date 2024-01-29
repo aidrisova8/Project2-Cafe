@@ -31,6 +31,14 @@ console.log(orderCount)
      
    });
 
+   async function handleClick(){
+    const token = localStorage.getItem("token");
+    if (!token) {
+      alert("You need to log in before checking out.");
+      return;
+    }
+    setCartOpen(false)
+   }
 
    const showOrders = () => {
       return (
@@ -39,7 +47,7 @@ console.log(orderCount)
             <Order key={item.idMeal} item={item} count={orderCount[item.idMeal]} />
           ))}
           <p className={styles.total}>Total: {new Intl.NumberFormat().format(total)}$</p>
-          <Link  to="/checkout" > <button className={styles.checkout} onClick={() => setCartOpen(false)}>
+          <Link  to="/checkout" > <button className={styles.checkout} onClick={handleClick}>
            
   CHECKOUT
 
