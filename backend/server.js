@@ -17,7 +17,7 @@ const PORT = 5000
 
 app.use(cors())
 app.use(express.json())
-app.use('/order',orderRoutes)
+app.use('/order',authorize,orderRoutes)
 app.use('/auth', authRoutes)
 app.use('/api/users',authorize, userRoutes)
 

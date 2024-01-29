@@ -1,5 +1,5 @@
 import styles from "./CheckOut.module.css"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Receipt from "../../components/Receipt/Receipt"
 import { useDispatch } from 'react-redux';
 import { addCustomer, clearCart } from "../../cafeSlice";
@@ -9,6 +9,7 @@ const CheckOut = ({user}) => {
 
   let[orderDetails,setOrderDetails]=useState({})
 
+  
   const dispatch = useDispatch();
 
   let[form,setForm]=useState({
@@ -24,6 +25,16 @@ const CheckOut = ({user}) => {
     state:'',
   })
 console.log(form)
+
+useEffect(()=>{
+
+  
+setForm({
+  firstname:user., 
+  lastname:'',
+  email:'', 
+})
+},[])
 
   function handleChange(e){
 setForm({... form, [e.target.id]: e.target.value})
