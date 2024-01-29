@@ -28,9 +28,9 @@ console.log(form)
 
 useEffect(()=>{
 
-  
+
 setForm({
-  firstname:user., 
+  firstname:'', 
   lastname:'',
   email:'', 
 })
