@@ -8,12 +8,12 @@ function authorize(req, res, next) {
         // 1. Check if the request has a token (in the Authorization header)
 
         let token = req.header("Authorization")
-
+console.log("1:", token)
         if (!token) {
             return res.status(403).json({ error: 'No token provided' })
         }
 
-        console.log(token) // "Bearer 9js83485jsh834"
+        console.log("2:", token) // "Bearer 9js83485jsh834"
 
         token = token.replace("Bearer ", "") // "9js83485jsh834"
 
@@ -22,6 +22,7 @@ function authorize(req, res, next) {
         const payload = jwt.verify(token, process.env.JWT_SECRET)
 
         if (payload.error) {
+            console.log(payload.error)
             return res.status(400).json({ error: payload.error })
         }
 

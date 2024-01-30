@@ -9,7 +9,7 @@ import baseURL from "../../Api";
 const CheckOut = ({user}) => {
 
   let[orderDetails,setOrderDetails]=useState({})
-
+console.log(orderDetails)
   
   const dispatch = useDispatch();
 
@@ -31,9 +31,10 @@ useEffect(()=>{
 
 
 setForm({
-  firstname:'', 
-  lastname:'',
-  email:'', 
+  email:user.email || '',
+  firstname:user.firstname || '', 
+  lastname:user.lastname || '',
+ 
 })
 },[])
 
@@ -56,10 +57,19 @@ let customer={
   cardDate:form.cardDate,
   state:form.state
 }
+try {
+  const response = await axios.post(baseURL+`/order/${user._id}`, form, {
+    headers: {
+      Authorization: localStorage.getItem("token")
+    }
+  })
+console.log( "myresponse",response)
+setOrderDetails(response.data)
+} catch (error) {
+  console.log("error")
+  console.log(error)
+}
 
-const response = await axios.post(baseURL+`/order/${user._id}`, form)
-console.log(response)
-setOrderDetails(response)
 
 setForm({
   email:'',
