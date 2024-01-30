@@ -1,5 +1,5 @@
 import  styles from "./Header.module.css"
-import { Link } from "react-router-dom"
+import { Link} from "react-router-dom"
 import { FaShoppingBag } from "react-icons/fa";
 import { useState } from "react";
 import { useSelector } from "react-redux";
@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux';
  
 const Header = ({ username, setUser }) => {
   // const orderReceipt = useSelector((state) => state.orders.receiptOrder);
+
   const dispatch = useDispatch();
    const logout = () => {
       localStorage.removeItem("token")
@@ -35,6 +36,7 @@ console.log(orderCount)
     const token = localStorage.getItem("token");
     if (!token) {
       alert("You need to log in before checking out.");
+      window.location.href = '/login';
       return;
     }
     setCartOpen(false)

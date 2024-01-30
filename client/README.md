@@ -30,13 +30,11 @@ Technologies Used:
 
 
 Deployment:
-Used Netlify.
-Used render.com
+Used Netlify. Copy the link https://vocal-piroshki-bd92ac.netlify.app/ paste it to your browser and load it.
+Used render.com. Copy the link https://blog-frontend-hlip.onrender.com paste it to your browser and load it.
 
-Setup/Instalation Requirements:
+ 
 
-To view the website,
-copy the link https://vocal-piroshki-bd92ac.netlify.app/ paste it to your browser and load it.
 
 Known Bugs:
 -The current experience of order details appearing only after form submission will be improved to provide a more intuitive user experience.
