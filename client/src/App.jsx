@@ -11,6 +11,7 @@ import './App.css'
 import { useEffect, useState } from 'react'
 import CheckOut from './pages/CheckOut/CheckOut'
 import axios from 'axios'
+import baseURL from './Api'
 
 function App() {
   const[categories, setCategories]=useState([]);
@@ -36,7 +37,7 @@ function App() {
   const [user, setUser] = useState({})
   async function getUser(token) {
     try {
-        const response = await axios.get('/api/users', {
+        const response = await axios.get(baseURL+'/api/users', {
             headers: {
                 Authorization: token
             }

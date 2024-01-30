@@ -4,6 +4,7 @@ import Receipt from "../../components/Receipt/Receipt"
 import { useDispatch } from 'react-redux';
 import { addCustomer, clearCart } from "../../cafeSlice";
 import axios from "axios";
+import baseURL from "../../Api";
 
 const CheckOut = ({user}) => {
 
@@ -13,10 +14,10 @@ const CheckOut = ({user}) => {
   const dispatch = useDispatch();
 
   let[form,setForm]=useState({
+    email:'',
     firstname:'', 
     lastname:'',
     phone:'',
-    email:'',
     address:'',
     city:'',
     zip:'',
@@ -44,10 +45,10 @@ setForm({... form, [e.target.id]: e.target.value})
 async function handleSubmit (e){
   e.preventDefault();
 let customer={
+  email:form.email,
   firstname:form.firstname, 
   lastname:form.lastname,
   phone:form.phone,
-  email:form.email,
   address:form.address,
   city:form.city,
   zip:form.zip,
@@ -56,15 +57,15 @@ let customer={
   state:form.state
 }
 
-const response = await axios.post(`/order/${user._id}`, form)
+const response = await axios.post(baseURL+`/order/${user._id}`, form)
 console.log(response)
 setOrderDetails(response)
 
 setForm({
+  email:'',
   firstname:'', 
   lastname:'',
   phone:'',
-  email:'',
   address:'',
   city:'',
   zip:'',

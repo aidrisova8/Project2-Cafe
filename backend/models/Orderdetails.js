@@ -3,6 +3,11 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const orderdetailsSchema = new Schema({
+    email: {
+        type: String,
+        required: true, 
+        unique: true
+    },
     firstname: {
         type: String,
        
@@ -11,11 +16,7 @@ const orderdetailsSchema = new Schema({
         type: String,
      
     },
-      email: {
-        type: String,
-        required: true, 
-        unique: true
-    },
+    
     phone: {
         type: Number,
        
